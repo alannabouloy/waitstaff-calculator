@@ -52,7 +52,7 @@ const updateMyEarnings = function() {
 }
 
 const getFormData = function() {
-
+    
 }
 
 
