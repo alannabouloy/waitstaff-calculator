@@ -56,7 +56,6 @@ const bindEventListeners = function() {
 const handleSubmit = function() {
     $('#js-meal-form').on('submit', event => {
         event.preventDefault();
-        console.log('clicked')
         getFormData();
         $('#js-meal-price').val('');
         $('#js-tip-percent').val('');
@@ -81,9 +80,7 @@ const handleCancel = function() {
 
 const handleReset = function() {
     $('#reset').on('click', event => {
-        console.log('clicked reset')
         meals.splice(0, meals.length)
-        console.log(meals) 
         render();
     })
 
@@ -114,7 +111,6 @@ const render = function() {
 
 //update data functions
 const updateCustomerCharges = function() {
-    console.log(meals)
     const subtotal = calcSubtotal(lastMeal().mealPrice,lastMeal().taxRate);
     const tip = calcTip(lastMeal().mealPrice, lastMeal().tipPercent);
    $('#subtotal').html(subtotal); 
@@ -134,7 +130,6 @@ const getFormData = function() {
     let tipPercent = ($('#js-tip-percent').val());
     let taxRate = ($('#js-tax-rate').val());
     updateStore(mealPrice, taxRate, tipPercent);
-    console.log('store updated');
 }
 
 
